@@ -14,11 +14,17 @@
       <li>
         <%= link_to '投稿フォーム', new_book_path %>
       </li>
+      
       <li>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        <%= link_to "ログアウト(Log in)", destroy_user_session_path, method: :delete %>
       </li>
+      
       <li>
-      <%= link_to 'マイページ', user_path(current_user.id) %>
+      <%= link_to 'マイページ(Home)', user_path(current_user.id) %>
+      </li>
+      
+      <li>
+      <%= link_to "全部の一覧(Books)", books_path %>
       </li>
     <% else %>
       <li>
