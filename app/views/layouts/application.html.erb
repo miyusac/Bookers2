@@ -10,6 +10,8 @@
   </head>
 
   <body>
+    <p id="notice"><%= flash[:notice] %></p>
+    
     <% if user_signed_in? %>
       <li>
         <%= link_to '投稿フォーム', new_book_path %>
