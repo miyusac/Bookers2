@@ -1,8 +1,7 @@
 <% @books.each do |book| %>
 <div>
-  <%#= attachment_image_tag post_image, :image %>
   <p>投稿ユーザー画像：<%= image_tag('sample-author1.jpg') %></p>
-  <p>title：<%= book.title %></p>
+  <p><%= link_to "title", book_path(book) %> : <%= book.title %></p>
   <p>opinion：<%= book.body %></p>
   <p>ユーザーネーム：<%= book.user.name %></p>
 </div>
