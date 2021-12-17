@@ -15,11 +15,15 @@ class BooksController < ApplicationController
   end
 
   def index
+    @book = Book.new
     @books = Book.page(params[:page]).reverse_order
+    @user = current_user
   end
 
   def show
+    @nbook = Book.new
     @book = Book.find(params[:id])
+    @user = current_user
   end
   
   def edit
