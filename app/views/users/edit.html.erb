@@ -5,23 +5,27 @@
   <% end %>
 <% end %>
 
-<div>
+<div class="container">
+<div class="row">
+<div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
 <h2>User info</h2>
 <%= form_with model:@user, local:true do |f| %>
-  <div>
-    <label>Name</label>
-    <%= f.text_field :name, autofocus: true, placeholder: "名前"%>
+  <div class="form-group">
+    <label for="user_name">Name</label>
+    <br><%= f.text_field :name, autofocus: true, placeholder: "名前"%>
   </div>
   
-  <div>
-    <label>ProfileImage</label>
-    <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+  <div class="form-group">
+    <label for="user_image">ProfileImage</label>
+    <br><%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
   </div>
   
-  <div>
-    <label>Introduction</label>
-    <%= f.text_area :introduction, autofocus: true, placeholder:"自己紹介文"%>
+  <div class="form-group">
+    <label for="user_introduction">Introduction</label>
+    <br><%= f.text_area :introduction, autofocus: true, placeholder:"自己紹介文"%>
   </div>
-  <%= f.submit "Update User" %>
+  <input type="submit" name="commit" value="Update User" class="btn btn-secondary" data-disable-with="Update User">
 <% end %>
+</div>
+</div>
 </div>
